@@ -47,21 +47,24 @@ function msgPrompt(){
 };
 
 function orderInfo(ID, stockQuantity){
-    connection.query('Select * FROM products WHERE item_id = ' + ID, function(err, res){
+    connection.query('Select * FROM products WHERE `item_id` = ' + ID, function(err, res){
         if(err){console.log(ERROR)};
-        if(stockQuantity <= res[0].stock_quantity){
-            var orderCost = res[0].price * stockQuantity;
-            console.log("Your total cost for " 
-            + stockQuantity + " " 
-            + res[0].product_name + " is " 
-            + orderCost + " Thank you!");
-            
-            connection.query("UPDATE products SET stock_quantity = stock_quantity - " + stockQuantity + "WHERE item_id = " + ID);
+        if(res[0] !== undefined){
+            if((stockQuantity <= res[0].stock_quantity)){
+                var orderCost = res[0].price * stockQuantity;
+                console.log("Your total cost for " 
+                + stockQuantity + " " 
+                + res[0].product_name + " is " 
+                + orderCost + " Thank you!");
+                connection.query("UPDATE products SET stock_quantity = stock_quantity - " + stockQuantity + " WHERE `item_id` = " + ID);
+            }else{
+                console.log("Insufficient Quantity!")
+            };
         }else{
-            console.log("Insufficient Quantity!")
-        };
+            console.log("No result for that id!");
+        }
         queryAllProducts();
     });
 };
 
-queryAllProducts();
+// queryAllProducts();

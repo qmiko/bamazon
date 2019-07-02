@@ -26,5 +26,4 @@ VALUES ("Polaroid OneStep", "Camera & Photos", 99.95, 20),
 ("USB A Cable", "Cell Phone Chargers & Power Adapters", 12.78, 200),
 ("Sunglasses", "Men's Fashion", 14.95, 60),
 ("Power Rangers Super Ninja", "Toys & Games", 17.30, 53),
-("Coleman Dome Tent", "Outdoor Recreation", 85.49, 70),
-
+("Coleman Dome Tent", "Outdoor Recreation", 85.49, 70)
