@@ -1,13 +1,13 @@
 # Bamazon
 Amazon-like storefront
 
-## How to Use
+### How to Use
 1. run npm install
 2. node bamazonCustomer in CLI
 
 ### Technologies Used
 MySQL, Node.js, Javascript
 
-##### Contributors
+### Contributors
 Shaquima Johnson-McSwain
 
